@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.database import test_db_connection
+from app.core.database import ensure_database_objects, test_db_connection
 from app.core.database import Base, engine
 
 
@@ -37,6 +37,7 @@ def db_check():
 @app.on_event("startup")
 def startup():
     Base.metadata.create_all(bind=engine)
+    ensure_database_objects()
 
 app.include_router(user_router)
 app.include_router(police_router)
