@@ -1,0 +1,12 @@
+@import "tailwindcss";
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1f1f1f; /* 依你想要的底色，可改掉 */
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff; /* 文字顏色改成白色 */
+}
